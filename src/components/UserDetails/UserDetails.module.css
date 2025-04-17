@@ -1,0 +1,77 @@
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.fullName {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infoGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.infoLabel {
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.infoValue {
+    font-size: 16px;
+}
+
+.statusBadge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.statusBadge.active {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #27ae60;
+}
+
+.statusBadge.blocked {
+    background-color: rgba(241, 196, 15, 0.2);
+    color: #f39c12;
+}
+
+.statusBadge.dismissed {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #c0392b;
+}
+
+.rolesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.roleBadge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--primary-color);
+}
