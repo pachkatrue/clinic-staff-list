@@ -85,10 +85,10 @@ describe('UsersTable Component', () => {
 
     // Проверяем имена пользователей
     const fullNameElements = screen.getAllByText((content, element) => {
-      return element?.className?.includes('fullName') && (
+      return Boolean(element?.className?.includes('fullName') && (
         content.includes('Чернова') || content.includes('Ларионов')
-      )
-    })
+      ));
+    });
     expect(fullNameElements.length).toBeGreaterThan(0)
 
     expect(screen.getByText(/Директор \/ Медсестра/)).toBeInTheDocument()
@@ -185,7 +185,7 @@ describe('UsersTable Component', () => {
     const paginationElement = container.querySelector('.pagination')
     if (paginationElement) {
       // Если пагинация существует для одной страницы, проверяем, что кнопки отключены
-      const buttons = within(paginationElement).queryAllByRole('button')
+      const buttons = paginationElement ? within(paginationElement as HTMLElement).queryAllByRole('button') : []
       const prevButton = buttons.find(btn => btn.textContent === '«')
       const nextButton = buttons.find(btn => btn.textContent === '»')
 
