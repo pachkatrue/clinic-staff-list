@@ -11,7 +11,9 @@ export const apiClient = ky.create({
         if (response && response.body) {
           try {
             const body = await response.json();
-            error.message = body.message || error.message;
+            error.message = typeof body === 'object' && body !== null && 'message' in body
+              ? String(body.message)
+              : error.message;
           } catch (e) {
             console.error('Error parsing response body:', e);
           }
